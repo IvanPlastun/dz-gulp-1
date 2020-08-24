@@ -1,29 +1,25 @@
-var gulp = require('gulp');
-var browserSync = require('browser-sync').create();
-var less = require('gulp-less');
-var sass = require('gulp-sass');
+const {src, dest, series, parallel, watch} = require('gulp')
+const browserSync = require('browser-sync').create()
+const sass = require('gulp-sass')
 
-gulp.task('server', ['sass'], function() {
+function server () {
     browserSync.init({
-    	server: { baseDir: './app/'}
-    });
-    gulp.watch('./app/**/*.html').on('change', browserSync.reload);
-    // gulp.watch('./app/less/**/*.less', ['less']);
-    gulp.watch('./app/sass/**/*.scss', ['sass']);
-});
+        server: {
+            baseDir: './app'
+        },
+        port: 8081
+    })
 
-gulp.task('less', function() {
-    return gulp.src('./app/less/**/*.less')
-    .pipe(less())
-    .pipe(gulp.dest('./app/css'))
-    .pipe(browserSync.stream());
-});
 
-gulp.task('sass', function() {
-    return gulp.src('./app/sass/**/*.scss')
-    .pipe(sass())
-    .pipe(gulp.dest('./app/css'))
-    .pipe(browserSync.stream());
-});
+    watch('./app/**/*.html').on('change', browserSync.reload)
+    watch('./app/sass/**/*.scss').on('change', styles)
+}
 
-gulp.task('default', ['server']);
+function styles () {
+    return src('./app/sass/**/*.scss')
+        .pipe(sass())
+        .pipe(dest('./app/css'))
+        .pipe(browserSync.stream())
+}
+
+exports.default = series(server, parallel(styles))
