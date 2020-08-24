@@ -1,18 +1,25 @@
 {
-  "name": "gulp-project",
+  "name": "dz-gulp-1",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "gulpfile.js",
+  "dependencies": {},
+  "devDependencies": {
+    "browser-sync": "^2.26.12",
+    "gulp": "^4.0.2",
+    "gulp-sass": "^4.1.0"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IvanPlastun/dz-gulp-1.git"
+  },
   "author": "",
   "license": "ISC",
-  "devDependencies": {
-    "browser-sync": "^2.23.6",
-    "gulp": "^3.9.1",
-    "gulp-less": "^3.4.0",
-    "gulp-sass": "^3.1.0"
-  }
+  "bugs": {
+    "url": "https://github.com/IvanPlastun/dz-gulp-1/issues"
+  },
+  "homepage": "https://github.com/IvanPlastun/dz-gulp-1#readme"
 }

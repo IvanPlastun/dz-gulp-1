@@ -1,2 +1,10 @@
+:root {
+  font-size: 1rem; }
+
+* {
+  box-sizing: border-box; }
+
 body {
-  color: green; }
+  color: blue;
+  font-family: "" Segoe UI ", " Tahoma ", " Geneva ", " Verdana ", sans-serif";
+  margin: 0; }

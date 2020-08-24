@@ -1,5 +1,18 @@
-$color: green;
+$color: blue;
+$fontSize: 1rem;
+$baseFontFamily: ''Segoe UI', 'Tahoma', 'Geneva', 'Verdana', sans-serif';
+$baseBackground: #f7f7f7;
+
+:root {
+	font-size: $fontSize;
+}
+
+* {
+	box-sizing: border-box;
+}
 
 body {
 	color: $color;
+	font-family: $baseFontFamily;
+	margin: 0;
 }
